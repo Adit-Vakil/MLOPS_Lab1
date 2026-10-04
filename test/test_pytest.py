@@ -41,4 +41,17 @@ def test_divide_by_zero():
 
 def test_divide_invalid_input():
     with pytest.raises(ValueError):
-        calculator.divide("10", 2)
+        calculator.divide("10", 2
+)
+def test_divide_zero_numerator():
+    assert calculator.divide(0, 5) == 0
+
+def test_divide_floats():
+    assert calculator.divide(7.5, 2.5) == 3
+
+def test_divide_small_numbers():
+    assert calculator.divide(1, 4) == 0.25
+
+def test_divide_invalid_denominator():
+    with pytest.raises(ValueError):
+        calculator.divide(10, "2")
