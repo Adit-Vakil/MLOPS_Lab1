@@ -85,3 +85,30 @@ def divide(x, y):
         raise ZeroDivisionError("Cannot divide by zero.")
 
     return x / y
+
+def power(x, y):
+    """Raises x to the power of y."""
+    if not (isinstance(x, (int, float)) and isinstance(y, (int, float))):
+        raise ValueError("Both inputs must be numbers.")
+
+    return x ** y
+
+
+def average(x, y):
+    """Calculates the average of two numbers."""
+    if not (isinstance(x, (int, float)) and isinstance(y, (int, float))):
+        raise ValueError("Both inputs must be numbers.")
+
+    return (x + y) / 2
+
+
+def percentage(value, total):
+    """Calculates value as a percentage of total."""
+    if not (isinstance(value, (int, float)) and isinstance(total, (int, float))):
+        raise ValueError("Both inputs must be numbers.")
+
+    if total == 0:
+        raise ZeroDivisionError("Total cannot be zero.")
+
+    return (value / total) * 100
+
